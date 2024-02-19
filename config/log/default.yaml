@@ -1,0 +1,12 @@
+_target_: nanow2v2.trainer.LoggingConfig
+
+# tags to easily find experiment
+date_str: ${date_tag}
+tags: ${tags}
+
+# how to log
+project_name: ${project_name}
+use_wandb: ${use_wandb}
+
+# how often to log
+log_interval: 100

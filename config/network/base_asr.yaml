@@ -1,0 +1,38 @@
+_target_: nanow2v2.model.wav2vec2_asr.Wav2vec2ForASR
+
+asr_cfg:
+  _target_: nanow2v2.model.wav2vec2_asr.ForASRConfig
+  vocab_size: 32
+  blank_idx: 0
+  freeze_cnn_for_initial_steps: -1  # -1 always, 0 never,
+  freeze_transformer_for_initial_steps: 5000  # -1 always, 0 never
+  use_hf_ckpt: null
+
+w2v2_cfg:
+  _target_: nanow2v2.model.wav2vec2_asr.Wav2vec2Config
+
+  # whether to use bias in conv, fc and layer norm layers
+  use_bias_in_cnn: False
+  use_bias_in_proj: True
+  use_bias_in_transformer: True
+
+  # CNN settings
+  num_dim_speech: 512
+  cnn_norm_type_first_layer: group
+  cnn_norm_type_remaining_layers: null
+
+  # transformer settings
+  num_layers: 12
+  num_heads: 12
+  num_dim_context: 768
+  num_dim_fnn: 3072 # num_dim_context * 4
+
+  # regularization
+  dropout_prob:  0.1
+  layer_drop_prob: 0
+
+  # mask settings
+  # acts as regularisation during fine-tuning,
+  # part of training objective during self-supervised pre-training
+  percentage_masked: 0.05  # how much time steps should be masked (lower bound)
+  mask_span: 10  # the size of individual masks

@@ -1,0 +1,10 @@
+name: nibg
+
+train_shard_path:
+  - ${oc.env:NIBG_SHARD_DIR}/tar/train
+
+val_shard_path:
+  - ${oc.env:NIBG_SHARD_DIR}/tar/val
+
+character_vocabulary_json_path: ${oc.env:LIBRISPEECH_META_DIR}/character_vocabulary.json
+shard_pattern: "*.tar*"

@@ -1,0 +1,8 @@
+# enable/disable
+use_lm: true
+
+# settings for decoding (if enabled)
+beam_size: 50
+lm_weight: 2
+word_score: 0
+

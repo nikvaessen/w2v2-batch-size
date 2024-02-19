@@ -1,0 +1,59 @@
+train:
+  _target_: nanow2v2.data.datapipe.DataPipeBuilderConfig
+  # potential compression of shards
+  tar_read_mode: 'r'
+
+  # parameters determining randomness
+  buffer_samples_before_batch: 500
+  buffer_batches: 10
+
+  # determine the size of buffer from which batches of almost equal length are drawn
+  bucket_buffer: 50
+
+  # logic for giving each worker equal number of data
+  allow_partial_shards: true
+  num_workers: 16
+
+  # batching (one must be defined)
+  max_tokens: 4_000_000
+
+  # bounds on length of data
+  max_audio_frames: 480_000 # 16_000 * 30 sec
+  max_audio_frame_difference: 160_000 # 10 sec
+
+  # train dataset should be infinite
+  make_infinite: true
+
+  # easily debug by limiting to a few samples
+  run_debug_mode: false
+
+val:
+  _target_: nanow2v2.data.datapipe.DataPipeBuilderConfig
+
+  # potential compression of shards
+  tar_read_mode: 'r'
+
+  # parameters determining randomness
+  buffer_samples_before_batch: 100
+  buffer_batches: 1
+
+  # determine the size of buffer from which batches of almost equal length are drawn
+  bucket_buffer: 50
+
+  # logic for giving each worker equal number of data
+  allow_partial_shards: true
+  num_workers: 1
+
+  # batching (one must be defined)
+  max_tokens: ${data.pipe.train.max_tokens}
+
+  # bounds on length of data
+  max_audio_frames: 480_000 # 16_000 * 30 sec
+
+  # val dataset should not be infinite
+  make_infinite: false
+
+  # easily debug by limiting to a few samples
+  run_debug_mode: ${data.pipe.train.run_debug_mode}
+
+test: null

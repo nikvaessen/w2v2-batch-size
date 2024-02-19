@@ -1,0 +1,21 @@
+_target_: torch.optim.lr_scheduler.LambdaLR
+
+# A function which computes a multiplicative factor given an integer parameter
+lr_lambda:
+  _target_: nanow2v2.other.tri_stage_schedule.TriStageLearningRateLambdaLRFunction
+  max_steps: ${train.num_steps}
+  warmup_stage_ratio: 0.1
+  constant_stage_ratio: 0
+  decay_stage_ratio: 0.9
+  initial_lr: ${eval:'${optim.algo.lr}/100'}
+  base_lr: ${optim.algo.lr}
+  final_lr: 0
+  warmup_rate: linear
+  decay_rate: linear
+
+# epoch number after which to not do any steps any more. '-1' implies never stop
+last_epoch: -1
+
+# print to STDOUT when making a step
+verbose: false
+

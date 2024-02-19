@@ -1,0 +1,19 @@
+_target_: torch.optim.lr_scheduler.CyclicLR
+
+# the lowest lr in the cycle
+base_lr: ${eval:'${optim.algo.lr}/100'}
+
+# the peak lr in the cycle
+max_lr: ${optim.algo.lr}
+
+# number of steps to go from base_lr to max_lr
+step_size_up: 25_000
+
+# number of steps to go from max_lr to base_lr
+step_size_down: 25_000
+
+# Adam doesn't have `momentum` parameter, can only be true with SGD
+cycle_momentum: False
+
+# shape of line (triangular=linearly increasing/decreasing)
+mode: triangular

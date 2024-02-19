@@ -1,0 +1,16 @@
+# @package _global_
+
+defaults:
+  - override /data/set: ls10h
+
+train:
+  num_steps: 20_000
+  save_init_ckpt: false
+  save_last_ckpt: true
+  save_progress_ckpt: false
+  save_best_ckpt: false
+
+optim:
+  algo:
+    lr: 5e-5
+    weight_decay: 0

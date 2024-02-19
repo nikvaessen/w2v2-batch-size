@@ -1,0 +1,46 @@
+defaults:
+  - _self_
+  - data/set: ls960h
+  - data/pipe: ssl
+  - network: base_ssl
+  - optim/algo: adamw
+  - optim/schedule: cyclic
+  - train: ssl
+  - log: default
+
+# project settings
+project_name: 'nanow2v2-ssl'
+use_wandb: true
+
+# use torch compile
+compile: false
+
+# potentially load from a checkpoint
+load_from_ckpt: null
+
+# enable to profile code
+enable_profiling: false
+
+# tag to add to the experiment dashboard for easy filtering
+# of certain experiment
+date_tag: ${now:%Y-%m-%d}
+tags: null
+
+# we dynamically decide on the run_id, which will also be used as the log folder and PWD at runtime
+run_id: ${get_run_id:}
+sweep_id: ${now:%Y-%m-%d}---${now:%H-%M-%S}
+
+slurm_job_id: ${oc.env:SLURM_ARRAY_JOB_ID,${oc.env:SLURM_JOB_ID, null}}
+slurm_array_task_id: ${oc.env:SLURM_ARRAY_TASK_ID,null}
+
+hydra:
+  job:
+    chdir: true
+  run:
+    dir: outputs/ssl/run/${run_id}
+  sweep:
+    dir: outputs/ssl/sweep/${sweep_id}
+    subdir: ${hydra.job.num}
+  callbacks:
+    log_job_return:
+      _target_: hydra.experimental.callbacks.LogJobReturnCallback

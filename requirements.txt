@@ -1,0 +1,53 @@
+# dependencies related to deep learning
+--extra-index-url=https://download.pytorch.org/whl/cu118
+lightning==2.0.9
+torch==2.0.1
+torchvision==0.15.2
+torchaudio==2.0.2
+torchdata==0.6.1
+torchmetrics==1.0.1
+
+# logging results
+wandb==0.15.5
+tensorboard==2.12.0
+
+# loading audio files
+soundfile
+
+# profiling
+torch-tb-profiler
+
+# dependencies related to config
+python-dotenv==1.0.0
+hydra-core==1.3.2
+hydra-submitit-launcher==1.2.0
+hydra-optuna-sweeper
+omegaconf
+
+# for checkpoint export and encoding/decoding transcripts
+transformers
+
+# evaluation of ASR systems
+jiwer==3.0.0
+
+# useful for creation of CLI scripts
+click
+rich
+
+# speech activity detection
+# pyannote.audio==3.0.1
+
+# standard machine learning dependencies
+numpy
+pandas
+polars
+seaborn
+matplotlib
+scikit-learn
+
+# test framework
+pytest
+
+# install local package
+wheel
+.

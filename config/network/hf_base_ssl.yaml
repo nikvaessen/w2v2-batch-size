@@ -1,0 +1,58 @@
+_target_: nanow2v2.model.hf_wav2vec2_ssl.HfWav2vec2ForSSL
+
+ssl_cfg:
+  _target_: nanow2v2.model.wav2vec2_ssl.ForSSLConfig
+
+  # self-supervised learning settings
+  num_dim_similarity: 256
+  num_negative_samples: 100
+  contrastive_temperature: 0.1
+  sample_negative_from_masked: true
+  ce_reduction: "mean"
+
+  # other loss settings (set to <= 0 to disable)
+  diversity_loss_weight: 0.1
+  l2_loss_weight: 10
+
+  # quantization settings
+  # only relevant for self-supervised pre-training
+  num_codebooks: 2
+  num_entries: 320
+  num_dim_quantized: 256  # each codebook entry will have dim=128
+  gumbel_temperature_start: 2
+  gumbel_temperature_floor: 0.5
+  gumbel_temperature_factor: 0.999995
+  freeze_codebooks: false
+  n_chunked_init: 0
+
+  # grad multiplication of CNN
+  cnn_grad_factor: 0.1
+
+w2v2_cfg:
+  _target_: nanow2v2.model.wav2vec2_ssl.Wav2vec2Config
+
+  # whether to use bias in conv, fc and layer norm layers
+  use_bias_in_cnn: False
+  use_bias_in_proj: True
+  use_bias_in_transformer: True
+
+  # CNN settings
+  num_dim_speech: 512
+  cnn_norm_type_first_layer: group
+  cnn_norm_type_remaining_layers: null
+
+  # transformer settings
+  num_layers: 12
+  num_heads: 8
+  num_dim_context: 768
+  num_dim_fnn: 3072 # num_dim_context * 4
+
+  # regularization
+  dropout_prob:  0.1
+  layer_drop_prob: 0
+
+  # mask settings
+  # acts as regularisation during fine-tuning,
+  # part of training objective during self-supervised pre-training
+  percentage_masked: 0.5  # how much time steps should be masked (lower bound)
+  mask_span: 10  # the size of individual masks

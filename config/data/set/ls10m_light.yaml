@@ -1,0 +1,16 @@
+name: ls_10m
+
+train_shard_path:
+  - ${oc.env:LIBRISPEECH_SHARD_DIR}/train-10m
+
+val_shard_path:
+  - ${oc.env:LIBRISPEECH_SHARD_DIR}/val-clean-100
+  - ${oc.env:LIBRISPEECH_SHARD_DIR}/val-clean-360
+  - ${oc.env:LIBRISPEECH_SHARD_DIR}/val-other-500
+
+test_shard_path:
+  - ${oc.env:LIBRISPEECH_SHARD_DIR}/dev-clean
+
+
+character_vocabulary_json_path: ${oc.env:LIBRISPEECH_META_DIR}/character_vocabulary.json
+shard_pattern: "*.tar"

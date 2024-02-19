@@ -1,0 +1,18 @@
+name: ls_100h
+
+train_shard_path:
+  - ${oc.env:LIBRISPEECH_SHARD_DIR}/train-clean-100
+
+val_shard_path:
+  - ${oc.env:LIBRISPEECH_SHARD_DIR}/val-clean-100
+  - ${oc.env:LIBRISPEECH_SHARD_DIR}/val-clean-360
+  - ${oc.env:LIBRISPEECH_SHARD_DIR}/val-other-500
+
+test_shard_path:
+  - ${oc.env:LIBRISPEECH_SHARD_DIR}/dev-clean
+  - ${oc.env:LIBRISPEECH_SHARD_DIR}/dev-other
+  - ${oc.env:LIBRISPEECH_SHARD_DIR}/test-clean
+  - ${oc.env:LIBRISPEECH_SHARD_DIR}/test-other
+
+character_vocabulary_json_path: ${oc.env:LIBRISPEECH_META_DIR}/character_vocabulary.json
+shard_pattern: "*.tar"

@@ -1,0 +1,111 @@
+without LM
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/0gpu.ckpt
+dev-clean: wer=0.45911915003124887
+dev-other: wer=0.6815380387846431
+test-clean: wer=0.4473714242239805
+test-other: wer=0.7044494965898019
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/16gpu.ckpt
+dev-clean: wer=0.061762435204588066
+dev-other: wer=0.14781738242914344
+test-clean: wer=0.062423919659160075
+test-other: wer=0.14867317501862715
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/1gpu.ckpt
+dev-clean: wer=0.16282489614352413
+dev-other: wer=0.38570699536782604
+test-clean: wer=0.16682516737674985
+test-other: wer=0.4041419100930401
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/2gpu.ckpt
+dev-clean: wer=0.11810227565163045
+dev-other: wer=0.3038980921724111
+test-clean: wer=0.12380173463177115
+test-other: wer=0.31434957874023267
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/32gpu.ckpt
+dev-clean: wer=0.058343443255762656
+dev-other: wer=0.15920153882389887
+test-clean: wer=0.058600882531953745
+test-other: wer=0.1596584070458323
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/4gpu.ckpt
+dev-clean: wer=0.08753354656078821
+dev-other: wer=0.22982256418308863
+test-clean: wer=0.09095404747413269
+test-other: wer=0.23430067057677245
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/8gpu.ckpt
+dev-clean: wer=0.07168854086246829
+dev-other: wer=0.1865038863154589
+test-clean: wer=0.07410225197808887
+test-other: wer=0.18932808589496208
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/scratch.ckpt
+dev-clean: wer=0.7018124333664204
+dev-other: wer=0.831141556096412
+test-clean: wer=0.6901628119293974
+test-other: wer=0.8470091511758975
+with LM
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/0gpu.ckpt
+dev-clean: wer=0.2740524245432153
+dev-other: wer=0.5328962864096726
+test-clean: wer=0.26411290322580644
+test-other: wer=0.555757216819823
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/16gpu.ckpt
+dev-clean: wer=0.04235138414028896
+dev-other: wer=0.10763916149799796
+test-clean: wer=0.04384129640900791
+test-other: wer=0.10876334944500697
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/1gpu.ckpt
+dev-clean: wer=0.09674276681004375
+dev-other: wer=0.2834262385177043
+test-clean: wer=0.09934190505173464
+test-other: wer=0.2962955887129129
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/2gpu.ckpt
+dev-clean: wer=0.0715231057681703
+dev-other: wer=0.21898798775221795
+test-clean: wer=0.07716448569689592
+test-other: wer=0.22658235103070135
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/32gpu.ckpt
+dev-clean: wer=0.04117495680305871
+dev-other: wer=0.12063280207270158
+test-clean: wer=0.04448797930614729
+test-other: wer=0.12047456202357526
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/4gpu.ckpt
+dev-clean: wer=0.05523693981838903
+dev-other: wer=0.16691528617413834
+test-clean: wer=0.05934266585514303
+test-other: wer=0.16865674493246471
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/8gpu.ckpt
+dev-clean: wer=0.04828866585787287
+dev-other: wer=0.1400447515113449
+test-clean: wer=0.051202069385270846
+test-other: wer=0.13719121945627877
+/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls100h/scratch.ckpt
+dev-clean: wer=0.5143744715267821
+dev-other: wer=0.7057980686189841
+test-clean: wer=0.5036328362751065
+test-other: wer=0.7344439562119099
+
+
+###############################################################################
+Science Cluster
+Job 2734554 for user 'nvaessen'
+Finished at: Mon Nov 27 16:00:42 CET 2023
+
+Job details:
+============
+
+Name                : eval_all_ckpt.sh
+User                : nvaessen
+Partition           : das
+Nodes               : cn104
+Cores               : 2
+State               : COMPLETED
+Submit              : 2023-11-27T14:00:25
+Start               : 2023-11-27T14:00:41
+End                 : 2023-11-27T16:00:42
+Reserved walltime   : 1-00:00:00
+Used walltime       :   02:00:01
+Used CPU time       :   02:10:39 (efficiency: 54.43%)
+% User (Computation): 97.30%
+% System (I/O)      :  2.70%
+Mem reserved        : 10G
+Max Mem used        : 2.00G (cn104)
+Max Disk Write      : 2.98G (cn104)
+Max Disk Read       : 58.30G (cn104)
+

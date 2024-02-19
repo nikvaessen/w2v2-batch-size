@@ -1,0 +1,44 @@
+_target_: nanow2v2.trainer.FabricTrainerConfig
+
+# how to run
+accelerator: gpu
+num_nodes: 1
+devices: 1
+strategy: auto
+precision: 16-mixed
+
+# training length
+num_steps: 100_000
+val_interval: 5_000
+accumulation: 1
+
+# gradient clipping strategies (at most one can be not null)
+clip_norm: null
+clip_value: null
+
+# sanity validation loop
+num_sanity_validation_steps: 10
+
+# potentially cap the number of validation steps each interval
+# -1 indicates all samples
+max_validation_steps: -1
+
+# store gradient vectors (will quickly fill disk if true)
+store_gradients: false
+
+# experiment reproducibility
+random_seed: 123
+
+# checkpoints
+save_init_ckpt: true
+save_last_ckpt: true
+save_progress_ckpt: false
+
+save_best_ckpt: true
+best_ckpt_op: min # validation metric is either minimized or maximized
+
+# enable unused param check if using layer drop
+ddp_find_unused_parameters: False
+
+# reduce memory overhead for ddp training
+ddp_gradient_as_bucket_view: True

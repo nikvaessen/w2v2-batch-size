@@ -1,0 +1,13 @@
+_target_: torch.optim.lr_scheduler.StepLR
+
+# number of epochs between consecutive steps
+step_size: 1
+
+# factor by which to multiply the learning rate every `step_size` epochs
+gamma: 1
+
+# epoch number after which to not do any steps any more. '-1' implies never stop
+last_epoch: -1
+
+# print to STDOUT when making a step
+verbose: false

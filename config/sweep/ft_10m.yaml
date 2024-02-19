@@ -1,0 +1,47 @@
+# @package _global_
+defaults:
+  - override /data/set: ls10m
+  - override /data/pipe: asr
+  - override /network: base_asr
+  - override /optim/algo: adamw
+  - override /optim/schedule: two_stage
+  - override /train: asr
+  - override /log: default
+  - override /hydra/sweeper: optuna
+
+# dynamically determine LR schedule
+optim:
+  schedule:
+    lr_lambda:
+      decay_stage_ratio: ${eval:'1-${optim.schedule.lr_lambda.warmup_stage_ratio}'}
+
+# don't save ckpt as it would be way too much storage space
+train:
+  num_steps: 12_000
+  save_init_ckpt: false
+  save_last_ckpt: false
+  save_progress_ckpt: false
+  save_best_ckpt: false
+
+# sweeper
+hydra:
+  sweeper:
+    direction: minimize
+    study_name: ft_10m
+
+    n_jobs: ${hydra.launcher.array_parallelism}
+    n_trials: ${eval:'int(24*${hydra.sweeper.n_jobs})'}
+
+    sampler:
+      _target_: optuna.samplers.TPESampler
+      seed: 123
+      n_startup_trials: ${eval:'int(${hydra.sweeper.n_trials}//2)'}
+
+    params:
+      optim.algo.lr: tag(log, interval(1e-8, 1e-1))
+      optim.algo.weight_decay: choice(0, 1e-1, 1e-2, 1e-3, 1e-4, 1e-6, 1e-8)
+      optim.schedule.lr_lambda.warmup_stage_ratio: choice(0.0, 0.1, 0.2, 0.3, 0.4, 0.5)
+      network.w2v2_cfg.dropout_prob: interval(0.0, 0.5)
+      network.w2v2_cfg.layer_drop_prob: interval(0.0, 0.5)
+      network.w2v2_cfg.percentage_masked: interval(0.0, 0.80)
+      network.asr_cfg.freeze_transformer_for_initial_steps: choice(0, 5_000, 10_000)
