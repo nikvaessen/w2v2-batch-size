@@ -100,16 +100,13 @@ python run_ft_asr.py +experiment=$CONDITION load_from_ckpt="$(realpath path/to/c
 
 where `$CONDITION` is one of 
 
-1. `ft_min_10` (10 minutes of labels)
-2. `ft_1h` (1 hour of labels)
-3. `ft_10h` (10 hour of labels)
-4. `ft_100h` (10 hour of labels)
-5. `ft_960h` (100h of labels)
+1. [`ft_min_10`](config/experiment/ft_min_10.yaml)
+2. [`ft_1h`](config/experiment/ft_1h.yaml)
+3. [`ft_10h`](config/experiment/ft_10h.yaml)
+4. [`ft_100h`](config/experiment/ft_100h.yaml)
+5. [`ft_960h`](config/experiment/ft_960h.yaml)
 
 If word decoding is desired, `decoder.use_lm=true` can be added to the command 
 (which uses settings of [default.yaml](config/decoder/default.yaml)), or use a decoder 
 like [4gram_fair_10min.yaml](config/decoder/4gram_fair_10min.yaml) by setting
-`decoder=4gram_fast`. 
-
-
-
+`decoder=4gram_fair_10min`. 
