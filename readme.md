@@ -1,4 +1,4 @@
-# Implementation of wav2vec 2.0 dubbed "nanow2v2"
+# nanow2v2 - an implemenation of wav2vec 2.0
 
 This repository contains the code for the paper 
 "The effect of batch size on contrastive self-supervised speech representation learning"
@@ -9,7 +9,7 @@ by Nik Vaessen and David A. van Leeuwen. This work can be cited using
 
 ## (Pre-training) model checkpoints
 
-Here we provide the best checkpoint for each batch size condition:
+Here we provide the best checkpoint (according to validation loss) for each batch size condition:
 
 | batch size | iteration | learning rate | checkpoint                                                                |
 |------------|-----------|---------------|---------------------------------------------------------------------------|
@@ -22,18 +22,22 @@ Here we provide the best checkpoint for each batch size condition:
 | 80 min     | 305k      | 5e-4          | [32gpu.ckpt](https://surfdrive.surf.nl/files/index.php/s/EMKdgKSCvrv2lzf) |
 
 
-All intermediary pre-training checkpoints (~300 GB) can be downloaded using the
-following torrent: TBD 
+All intermediary pre-training checkpoints (~210 GB) can be downloaded using the
+following torrent: https://academictorrents.com/details/4dcb2fbd6cba0b3e450ae851abd4cad6c7289087
 
 The checkpoint(s) can be converted to fairseq format by using
 [nano_to_fairseq.py](convert/nano_to_fairseq.py) and then to huggingface format with
 the script [convert_fairseq_to_hf.py](convert_fairseq_to_hf.py).
 
-[//]: # (## Training plots)
+## Training plots
 
-[//]: # ()
-[//]: # (We used weight and biases to plot various metrics during training. These can be found here:)
+We used weight and biases to plot various metrics during training. The SSL plots can be found here: https://wandb.ai/nikvaessen/nanow2v2-ssl/table?workspace=default
 
+For ASR fine-tuning, the plots are provided here: 
+https://wandb.ai/nikvaessen/nanow2v2-asr/table?workspace=default. 
+Note that we filter by the tag `16gpu` by default.
+To get a different batch size, change the filter to the correspond value;
+in the table above the filename of each checkpoint is the corresponding tag (e.g., 20 mins = `8gpu`).
 
 ## Setup
 
