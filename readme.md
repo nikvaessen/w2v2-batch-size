@@ -22,7 +22,7 @@ Here we provide the best checkpoint (according to validation loss) for each batc
 | 80 min     | 305k      | 5e-4          | [32gpu.ckpt](https://surfdrive.surf.nl/files/index.php/s/EMKdgKSCvrv2lzf) |
 
 
-All intermediary pre-training checkpoints (~210 GB) can be downloaded using the
+All intermediary pre-training checkpoints (~230 GB) can be downloaded using the
 following torrent: https://academictorrents.com/details/4dcb2fbd6cba0b3e450ae851abd4cad6c7289087
 
 The checkpoint(s) can be converted to fairseq format by using
