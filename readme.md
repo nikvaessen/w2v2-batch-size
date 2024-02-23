@@ -1,10 +1,16 @@
 # nanow2v2 - an implemenation of wav2vec 2.0
 
 This repository contains the code for the paper 
-"The effect of batch size on contrastive self-supervised speech representation learning"
+[The effect of batch size on contrastive self-supervised speech representation learning](https://arxiv.org/abs/2402.13723)
 by Nik Vaessen and David A. van Leeuwen. This work can be cited using
 ```bibtex
-
+@article{vaessen2024effect,
+  title={The Effect of Batch Size on Contrastive Self-Supervised Speech Representation Learning},
+  author={Vaessen, Nik and van Leeuwen, David A},
+  journal={arXiv preprint arXiv:2402.13723},
+  year={2024},
+  url={https://arxiv.org/abs/2402.13723}
+}
 ```
 
 ## (Pre-training) model checkpoints
