@@ -39,6 +39,9 @@ legend_breaks <- c(
 )
 legend_labels = c('10 min', '1 hour', '10 hours', '100 hours', '960 hours')
 
+# remove rows where column lm is equal to '4-gram word decoding'
+df <- subset(df, lm != '4-gram word decoding')
+
 
 # plot
 g = (
@@ -71,7 +74,7 @@ g = (
 # change order of 
 g = (
   g
-  + facet_grid(rows = vars(lm), cols = vars(eval_dataset)) 
+  + facet_grid(cols = vars(eval_dataset)) 
   + theme(legend.position = "bottom")
 )
 

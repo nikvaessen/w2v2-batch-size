@@ -238,7 +238,6 @@ g = (
   (loss_c | loss_d | loss_l2)
   / (acc | perplex_cb1 | perplex_cb2)
   / (cb1_avg | cb1_min | cb1_max)
-  / (cb2_avg | cb2_min | cb2_max)
   + plot_layout(guides = "collect")
   & theme(
       legend.direction = "horizontal",
