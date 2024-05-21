@@ -2,7 +2,7 @@
 #
 # Entrypoint for fine-tuning a SSL model for ASR.
 #
-# Author(s): Nik Vaessen
+# Author(s): anon
 ########################################################################################
 
 import hydra

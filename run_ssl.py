@@ -2,7 +2,7 @@
 #
 # Entrypoint for training a SSL model.
 #
-# Author(s): Nik Vaessen
+# Author(s): anon
 ########################################################################################
 
 import hydra

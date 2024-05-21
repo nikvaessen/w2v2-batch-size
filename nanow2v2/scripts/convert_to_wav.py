@@ -4,7 +4,7 @@
 # Converts a set of audio files to 16 kHz, 16 bit (pcm_s16le), mono audio
 # by using FFMPEG.
 #
-# Author(s): Nik Vaessen
+# Author(s): anon
 ########################################################################################
 
 import multiprocessing

@@ -8,7 +8,7 @@
 # This will result in batches with respective dimensionality
 # [NUM_SAMPLES, MAX_NUM_FRAMES]
 #
-# Author(s): Nik Vaessen
+# Author(s): anon
 ########################################################################################
 
 from typing import List, Callable

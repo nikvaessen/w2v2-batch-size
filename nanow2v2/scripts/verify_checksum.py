@@ -5,7 +5,7 @@
 #
 # Usage: ./verify_checksum <file_path> <checksum> --algo md5
 #
-# Author(s): Nik Vaessen
+# Author(s): anon
 ########################################################################################
 
 import pathlib

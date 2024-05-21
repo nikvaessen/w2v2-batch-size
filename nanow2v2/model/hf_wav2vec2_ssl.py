@@ -4,7 +4,7 @@
 #
 # Used as sanity check for own implementation.
 #
-# Author(s): Nik Vaessen
+# Author(s): anon
 ########################################################################################
 
 from typing import List, Optional

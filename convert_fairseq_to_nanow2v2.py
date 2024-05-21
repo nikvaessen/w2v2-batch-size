@@ -3,7 +3,7 @@
 #
 # Script to convert a fairseq checkpoint to a nanow2v2 checkpoint.
 #
-# Author(s): Nik Vaessen
+# Author(s): anon
 ########################################################################################
 
 import pathlib

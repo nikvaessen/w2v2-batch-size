@@ -22,4 +22,4 @@ name: ${hydra.job.name}
 signal_delay_s: 120
 max_num_timeout: 0
 
-additional_parameters: { "mail-user": "nvaessen", "mail-type": "BEGIN,END,FAIL" }
+additional_parameters: { "mail-user": "anon", "mail-type": "BEGIN,END,FAIL" }

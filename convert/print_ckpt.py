@@ -3,7 +3,7 @@
 #
 # Script to print content of a checkpoint to standard out.
 #
-# Author(s): Nik Vaessen
+# Author(s): anon
 ########################################################################################
 
 import pathlib
