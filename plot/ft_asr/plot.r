@@ -39,16 +39,13 @@ legend_breaks <- c(
 )
 legend_labels = c('10 min', '1 hour', '10 hours', '100 hours', '960 hours')
 
-# remove rows where column lm is equal to '4-gram word decoding'
-df <- subset(df, lm != '4-gram word decoding')
-
 
 # plot
 g = (
   ggplot(df)
   + aes(
-    batch.size, 
-    value, 
+    batch.size,
+    value,
     color=ft_dataset,
     shape=ft_dataset,
     group=ft_dataset
@@ -66,15 +63,15 @@ g = (
   )
   + scale_shape(
     name='amount of labels for fine-tuning',
-    breaks=legend_breaks, 
-    labels=legend_labels, 
+    breaks=legend_breaks,
+    labels=legend_labels,
   )
 )
 
-# change order of 
+# change order of
 g = (
   g
-  + facet_grid(cols = vars(eval_dataset)) 
+  + facet_grid(rows = vars(lm), cols = vars(eval_dataset))
   + theme(legend.position = "bottom")
 )
 

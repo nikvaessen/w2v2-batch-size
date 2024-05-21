@@ -2,7 +2,7 @@
 #
 # Fabric-based trainer for local and slurm-based model training and evaluation.
 #
-# Author(s): Nik Vaessen
+# Author(s): anon
 ########################################################################################
 
 import abc

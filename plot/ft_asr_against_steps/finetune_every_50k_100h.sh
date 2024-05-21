@@ -10,7 +10,7 @@
 #SBATCH --nodelist=cn117
 #SBATCH --array=0-7
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=nvaessen
+#SBATCH --mail-user=anon
 #SBATCH --output=offline-100h-%A_%a.out
 #SBATCH --error=offline-100h-%A_%a.err
 

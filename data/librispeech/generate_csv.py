@@ -4,7 +4,7 @@
 # This script can be used to generate the CSV file(s) which will be used to write
 # the LibriSpeech dataset into tar shards.
 #
-# Author(s): Nik Vaessen
+# Author(s): anon
 ########################################################################################
 
 import pathlib

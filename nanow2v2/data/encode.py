@@ -3,7 +3,7 @@
 # Logic to encode a transcription to indexes, and decode network predictions to
 # transcriptions.
 #
-# Author(s): Nik Vaessen
+# Author(s): anon
 ########################################################################################
 
 import json

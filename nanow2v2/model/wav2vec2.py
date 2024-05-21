@@ -12,7 +12,7 @@ We make a few changes to improve running time:
 1. LayerNorm with weights but without bias (see https://arxiv.org/abs/1911.07013)
 2. FlashAttention (see https://arxiv.org/abs/2205.14135)
 
-Author: Nik Vaessen
+Author: anon
 """
 
 import math

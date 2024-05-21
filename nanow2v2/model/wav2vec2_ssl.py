@@ -2,7 +2,7 @@
 #
 # This class implements as wav2vec2 network for automatic speech recognition.
 #
-# Author(s): Nik Vaessen
+# Author(s): anon
 ########################################################################################
 
 from dataclasses import dataclass

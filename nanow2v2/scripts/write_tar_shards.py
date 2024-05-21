@@ -5,7 +5,7 @@
 # which each contain only a (small) subset of the dataset. Each tar file is called a
 # shard.
 #
-# Author(s): Nik Vaessen
+# Author(s): anon
 ########################################################################################
 
 import io

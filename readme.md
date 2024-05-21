@@ -1,16 +1,10 @@
-# nanow2v2 - an implemenation of wav2vec 2.0
+# An implementation of wav2vec 2.0
 
 This repository contains the code for the paper 
-[The effect of batch size on contrastive self-supervised speech representation learning](https://arxiv.org/abs/2402.13723)
-by Nik Vaessen and David A. van Leeuwen. This work can be cited using
+[The effect of batch size on contrastive self-supervised speech representation learning](https://arxiv.org/abs/anon)
+by anon. This work can be cited using
 ```bibtex
-@article{vaessen2024effect,
-  title={The Effect of Batch Size on Contrastive Self-Supervised Speech Representation Learning},
-  author={Vaessen, Nik and van Leeuwen, David A},
-  journal={arXiv preprint arXiv:2402.13723},
-  year={2024},
-  url={https://arxiv.org/abs/2402.13723}
-}
+very anon
 ```
 
 ## (Pre-training) model checkpoints
@@ -29,7 +23,7 @@ Here we provide the best checkpoint (according to validation loss) for each batc
 
 
 All intermediary pre-training checkpoints (~230 GB) can be downloaded using the
-following torrent: https://academictorrents.com/details/4dcb2fbd6cba0b3e450ae851abd4cad6c7289087
+following torrent: anon
 
 The checkpoint(s) can be converted to fairseq format by using
 [nano_to_fairseq.py](convert/nano_to_fairseq.py) and then to huggingface format with
@@ -37,10 +31,10 @@ the script [convert_fairseq_to_hf.py](convert_fairseq_to_hf.py).
 
 ## Training plots
 
-We used weight and biases to plot various metrics during training. The SSL plots can be found here: https://wandb.ai/nikvaessen/nanow2v2-ssl/table?workspace=default
+We used weight and biases to plot various metrics during training. The SSL plots can be found here: https://wandb.ai/anon/nanow2v2-ssl/table?workspace=default
 
 For ASR fine-tuning, the plots are provided here: 
-https://wandb.ai/nikvaessen/nanow2v2-asr/table?workspace=default. 
+https://wandb.ai/anon/nanow2v2-asr/table?workspace=default. 
 Note that we filter by the tag `16gpu` by default.
 To get a different batch size, change the filter to the correspond value;
 in the table above the filename of each checkpoint is the corresponding tag (e.g., 20 mins = `8gpu`).

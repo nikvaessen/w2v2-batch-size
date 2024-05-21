@@ -6,8 +6,8 @@ setup(
     name="nanow2v2",
     version="1.0",
     description="Self-contained implementation of wav2vec2",
-    author="Nik Vaessen",
-    author_email="nikvaes@gmail.com",
+    author="anon",
+    author_email="anon@gmail.com",
     packages=find_packages(),
     entry_points={
         "console_scripts": [

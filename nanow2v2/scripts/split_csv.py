@@ -5,7 +5,7 @@
 # based on multiple, different axis. This can be useful for generating a train/val split
 # or creating smaller subsets of the dataset.
 #
-# Author(s): Nik Vaessen
+# Author(s): anon
 ########################################################################################
 
 import pathlib
