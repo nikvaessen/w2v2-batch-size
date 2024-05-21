@@ -13,13 +13,13 @@ Here we provide the best checkpoint (according to validation loss) for each batc
 
 | batch size | iteration | learning rate | checkpoint                                                                |
 |------------|-----------|---------------|---------------------------------------------------------------------------|
-| 87.5 sec   | 395k      | 7.29e-6       | [0gpu.ckpt](https://surfdrive.surf.nl/files/index.php/s/eZZy53BXYQHXNLX)  |
-| 150 sec    | 400k      | 7.91e-5       | [1gpu.ckpt](https://surfdrive.surf.nl/files/index.php/s/Wji0ZEcYkOnHqq5)  |
-| 5 min      | 400k      | 1.12e-4       | [2pgu.ckpt](https://surfdrive.surf.nl/files/index.php/s/NPClooexFIvkgTX)  |
-| 10 min     | 400k      | 1.58e-4       | [4gpu.ckpt](https://surfdrive.surf.nl/files/index.php/s/oGS0GWlKqebkqI9)  |
-| 20 min     | 400k      | 2.24e-4       | [8gpu.ckpt](https://surfdrive.surf.nl/files/index.php/s/izHq8UebczavmyY)  |
-| 40 min     | 400k      | 5e-4          | [16gpu.ckpt](https://surfdrive.surf.nl/files/index.php/s/UTHOiwUzG0U1puu) |
-| 80 min     | 305k      | 5e-4          | [32gpu.ckpt](https://surfdrive.surf.nl/files/index.php/s/EMKdgKSCvrv2lzf) |
+| 87.5 sec   | 395k      | 7.29e-6       | [0gpu.ckpt](https://anon.anon/files/index.php/s/eZZy53BXYQHXNLX)  |
+| 150 sec    | 400k      | 7.91e-5       | [1gpu.ckpt](https://anon.anon/files/index.php/s/Wji0ZEcYkOnHqq5)  |
+| 5 min      | 400k      | 1.12e-4       | [2pgu.ckpt](https://anon.anon/files/index.php/s/NPClooexFIvkgTX)  |
+| 10 min     | 400k      | 1.58e-4       | [4gpu.ckpt](https://anon.anon/files/index.php/s/oGS0GWlKqebkqI9)  |
+| 20 min     | 400k      | 2.24e-4       | [8gpu.ckpt](https://anon.anon/files/index.php/s/izHq8UebczavmyY)  |
+| 40 min     | 400k      | 5e-4          | [16gpu.ckpt](https://anon.anon/files/index.php/s/UTHOiwUzG0U1puu) |
+| 80 min     | 305k      | 5e-4          | [32gpu.ckpt](https://anon.anon/files/index.php/s/EMKdgKSCvrv2lzf) |
 
 
 All intermediary pre-training checkpoints (~230 GB) can be downloaded using the
