@@ -39,6 +39,8 @@ def sort_legend_value(x: str):
 @click.option("-y", type=str, help="label of y-axis")
 @click.option("-t", type=str, help="title of plot")
 def main(in_path: pathlib.Path, out_path: pathlib.Path, x: str, y: str, t: str):
+    seaborn.set_style("whitegrid")
+
     # read dataframe
     df = polars.read_csv(in_path)
 

@@ -82,6 +82,7 @@ g = (
     breaks=custom_legend_order,
     values=seq(0,6)
   )
+  + labs(title="WER after fine-tuning when having seen a certain amount of data during SSL")
 )
 
 

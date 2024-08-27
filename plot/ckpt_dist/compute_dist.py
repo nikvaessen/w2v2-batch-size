@@ -1,6 +1,6 @@
 import gc
 import pathlib
-import joblib
+from functools import lru_cache
 
 import click
 import polars
@@ -12,8 +12,9 @@ def get_iteration(ckpt_file: pathlib.Path):
     return int(ckpt_file.name.split(".")[2].split("_")[1])
 
 
-def get_parameter_vector(ckpt_file: pathlib.Path, use_cuda: bool = False):
-    ckpt = torch.load(ckpt_file, map_location="cuda" if use_cuda else "cpu")
+@lru_cache(maxsize=5)
+def get_parameter_vector(ckpt_file: pathlib.Path):
+    ckpt = torch.load(ckpt_file, map_location="cpu")
 
     parameter_tensors = [(k, v.flatten()) for k, v in ckpt["network"].items()]
     parameter_tensors = sorted(parameter_tensors, key=lambda tpl: tpl[0])
@@ -23,14 +24,15 @@ def get_parameter_vector(ckpt_file: pathlib.Path, use_cuda: bool = False):
 
 @torch.no_grad()
 def compute_distances(ckpt1: pathlib.Path, ckpt2: pathlib.Path, use_cuda: bool = False):
-    theta1 = get_parameter_vector(ckpt1, use_cuda)
-    theta2 = get_parameter_vector(ckpt2, use_cuda)
+    theta1 = get_parameter_vector(ckpt1)
+    theta2 = get_parameter_vector(ckpt2)
+
+    if use_cuda:
+        theta1 = theta1.to("cuda")
+        theta2 = theta2.to("cuda")
 
     # euclidian distance
-    diff = theta2 - theta1
-    power = torch.pow(diff, 2)
-    summation = torch.sum(power)
-    euclid_dist = torch.sqrt(summation).item()
+    euclid_dist = torch.cdist(theta1[None, :], theta2[None, :]).squeeze()
 
     # cosine distance
     cosine_similarity = torch.cosine_similarity(theta1, theta2, dim=0)
@@ -43,10 +45,10 @@ def compute_distances(ckpt1: pathlib.Path, ckpt2: pathlib.Path, use_cuda: bool =
     return euclid_dist, cosine_similarity
 
 
-def iteration(first, second):
+def iteration(first, second, use_gpu: bool = False):
     it0, ckpt0 = first
     it1, ckpt1 = second
-    euc_dist, cos_sim = compute_distances(ckpt0, ckpt1, use_cuda=False)
+    euc_dist, cos_sim = compute_distances(ckpt0, ckpt1, use_cuda=use_gpu)
 
     return {
         "it0": it0,
@@ -60,7 +62,13 @@ def iteration(first, second):
 @click.argument("ckpt_dir", type=pathlib.Path)
 @click.argument("result_csv_file", type=pathlib.Path)
 @click.option("-w", "--workers", type=int, default=None)
-def main(ckpt_dir: pathlib.Path, result_csv_file: pathlib.Path, workers: int = None):
+@click.option("--gpu", is_flag=True, default=False)
+def main(
+    ckpt_dir: pathlib.Path,
+    result_csv_file: pathlib.Path,
+    workers: int = None,
+    gpu: bool = False,
+):
     # find all ckpt files
     ckpt_files = sorted(
         [(get_iteration(f), f) for f in ckpt_dir.glob("*.progress.ckpt")],
@@ -89,14 +97,10 @@ def main(ckpt_dir: pathlib.Path, result_csv_file: pathlib.Path, workers: int = N
     all_comparisons = comparisons_to_zero + comparisons_to_next
 
     # use joblib to compute euclid distance in parallel
+    print("making comparison")
     results = list(
         tqdm.tqdm(
-            (
-                joblib.Parallel(n_jobs=workers, timeout=99999, return_as="generator")(
-                    joblib.delayed(iteration)(first, second)
-                    for first, second in all_comparisons
-                )
-            ),
+            (iteration(first, second, gpu) for first, second in all_comparisons),
             total=len(all_comparisons),
         )
     )

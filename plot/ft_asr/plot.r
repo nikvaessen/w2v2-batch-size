@@ -26,6 +26,9 @@ df <- df %>%
 # change order of rows in facet grid
 df$lm = factor(df$lm, levels = c("letter decoding", "4-gram word decoding"))
 
+# delete data 
+df_subset <- df[df$lm == 'letter decoding' & df$eval_dataset == 'test-clean', ]
+
 # x-axis for all graphs
 x_axis = scale_x_discrete(
   name='self-supervised learning batch size',
@@ -38,9 +41,6 @@ legend_breaks <- c(
   "ls10m", "ls1h", "ls10h", "ls100h", 'ls960h'
 )
 legend_labels = c('10 min', '1 hour', '10 hours', '100 hours', '960 hours')
-
-# remove rows where column lm is equal to '4-gram word decoding'
-df <- subset(df, lm != '4-gram word decoding')
 
 
 # plot
@@ -69,12 +69,13 @@ g = (
     breaks=legend_breaks, 
     labels=legend_labels, 
   )
+  + labs(title = "Fine-tune various SSL batch sizes for speech recognition")
 )
 
 # change order of 
 g = (
   g
-  + facet_grid(cols = vars(eval_dataset)) 
+  + facet_grid(rows = vars(lm), cols = vars(eval_dataset)) 
   + theme(legend.position = "bottom")
 )
 
@@ -85,8 +86,8 @@ ggsave(
   file="ft_plot_a4.pdf",
   plot=g,
   device = cairo_pdf,
-  width = 210,
-  height = 297/2-10,
+  width = 200,
+  height = 120,
   units = "mm"
 )
 

@@ -7,9 +7,8 @@ library(egg)
 library(dplyr)
 
 # Concatenate the list of data frames into a single data frame
-df = read_csv("merged.csv")
-
-print(df)
+df = read_csv("merged1.csv")
+df$dw <- as.character(df$dw)
 
 custom_legend_order <- c(
   "87.5 sec",
@@ -31,46 +30,43 @@ x_axis = scale_x_continuous(
 g = (
   ggplot(df)
   + aes(
-      train_step, 
-      average_variance, 
-      color=batch_size, 
-     #linetype=batch_size
+      step,
+      std,
+      color=bs,
+      linetype=dw
     )
   + geom_line()
-  #+ geom_point()
   + x_axis
   + scale_y_continuous(limits = c(0, 0.30))
   + scale_color_colorblind(
-      name="batch size", 
-      breaks=custom_legend_order, 
-      #guide=guide_legend(nrow = 3)
+      name="batch size",
+      breaks=custom_legend_order,
+      guide=guide_legend(nrow = 1)
     )
   + scale_linetype_manual(
-      name="batch size",
-      breaks=custom_legend_order, 
-      values=c(6, 5, 7, 3, 4, 2, 1)
+      name="diversity loss weight",
+      breaks=c("0.05", "0.1"),
+      values=c(2, 1)
     )
-#  + scale_shape_manual(
-#      name='batch size',
-#      breaks=custom_legend_order,
-#      values=seq(0,6)
-#    )
+ # + scale_shape_manual(
+ #     name='batch size',
+ #     breaks=custom_legend_order,
+ #     values=seq(0,6)
+ #   )
   + ylab("average std of gradient")
-     
+  + labs(title="Average standard deviation of gradient of each parameter (n=10)")
+
 )
 
-#g = g + theme(legend.position = "bottom")
-
+g = g + theme(legend.position = "bottom")
 g
+
 
 ggsave(
   file="gradient_std.pdf",
   plot=g,
   device = cairo_pdf,
-  width = 100,
-  height = 297/2-70,
+  width = 210,
+  height = 297/2-60,
   units = "mm"
 )
-
-
-

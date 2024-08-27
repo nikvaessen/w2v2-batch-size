@@ -228,16 +228,17 @@ acc = (
   + coord_cartesian(ylim = c(0, 0.6))
   + x_axis 
   # + scale_linetype(breaks=custom_legend_order, guide=guide_legend(nrow = 1))
-  + scale_color_colorblind(breaks=custom_legend_order, guide="none")
+  + scale_color_colorblind(breaks=custom_legend_order, guide=guide_legend(nrow = 1))
   + labs(title = "Accuracy", tag="D", color = "batch size", linetype = "batch size") 
   + ylab('Accuracy')
 )
 
 # subplots
 g = (
-  (loss_c | loss_d | loss_l2)
-  / (acc | perplex_cb1 | perplex_cb2)
-  / (cb1_avg | cb1_min | cb1_max)
+ (loss_c | loss_d | loss_l2)
+ / (acc | perplex_cb1 | perplex_cb2)
+ / (cb1_avg | cb1_min | cb1_max)
+ #/ (cb2_avg | cb2_min | cb2_max)
   + plot_layout(guides = "collect")
   & theme(
       legend.direction = "horizontal",
@@ -250,10 +251,12 @@ g
 
 # save
 ggsave(
-  file="train_plot_a4.pdf",
+  file="val_loss.pdf",
   plot=g,
   device = cairo_pdf,
-  width = 210,
-  height = 297/2 + 50,
+  width = 200,
+  height = 120,
   units = "mm"
 )
+
+

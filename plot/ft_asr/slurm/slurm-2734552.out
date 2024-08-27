@@ -1,9 +1,9 @@
 without LM
 /home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls1h/0gpu.ckpt
-dev-clean: wer=1.0156979522811662
-dev-other: wer=1.0340150741932952
-test-clean: wer=1.0221393791844187
-test-other: wer=1.0306440211680645
+dev-clean: wer=0.7314620614051819
+dev-other: wer=0.8403469920158386
+test-clean: wer=0.7264150977134705
+test-other: wer=0.8560075163841248
 /home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls1h/16gpu.ckpt
 dev-clean: wer=0.23059813977427301
 dev-other: wer=0.31475229645913483

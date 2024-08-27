@@ -1,8 +1,8 @@
 import pathlib
 import polars
 
-csv_file = pathlib.Path("ft100h_over_time.csv")
-new_file = pathlib.Path("ft100h_over_time.fixed.csv")
+csv_file = pathlib.Path("ft10min_over_time.csv")
+new_file = pathlib.Path("ft10min_over_time.fixed.csv")
 
 df = polars.read_csv(csv_file)
 
@@ -50,7 +50,6 @@ for r in df.iter_rows(named=True):
             "hours seen": hours_seen,
             "wer clean": wer_clean,
             "wer other": wer_other,
-            "iteration": iteration
         }
     )
 

@@ -9,4 +9,4 @@ df10m = df10m.with_columns(polars.lit("10 minutes of labels").alias("ft_dataset"
 print(df100h)
 print(df10m)
 
-polars.concat([df10m, df100h]).write_csv("merged.Lcsv")
+polars.concat([df10m, df100h]).write_csv("merged.csv")
