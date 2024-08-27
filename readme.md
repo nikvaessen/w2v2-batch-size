@@ -114,3 +114,5 @@ If word decoding is desired, `decoder.use_lm=true` can be added to the command
 (which uses settings of [default.yaml](config/decoder/default.yaml)), or use a decoder 
 like [4gram_fair_10min.yaml](config/decoder/4gram_fair_10min.yaml) by setting
 `decoder=4gram_fair_10min`. 
+
+The superb experiments were done using a fork of s3rpl (https://github.com/s3prl/s3prl/) found here: anon-url.
