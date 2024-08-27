@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("/home/nvaessen/scratch/downloads/cb0_sim_max.csv")
+df = pd.read_csv("/home/anon/scratch/downloads/cb0_sim_max.csv")
 print(df.columns)
 
 col = df['7638259 - codebook/cb0_max_cos_sim']

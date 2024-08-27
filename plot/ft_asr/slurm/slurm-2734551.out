@@ -1,81 +1,81 @@
 without LM
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/0gpu.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/0gpu.ckpt
 dev-clean: wer=0.878680944442749
 dev-other: wer=0.9385451674461364
 test-clean: wer=0.8810864090919495
 test-other: wer=0.941291093826294
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/16gpu.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/16gpu.ckpt
 dev-clean: wer=0.44654608286460057
 dev-other: wer=0.5239067284289864
 test-clean: wer=0.45444689592209375
 test-other: wer=0.5204707410733049
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/1gpu.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/1gpu.ckpt
 dev-clean: wer=0.7150104775559722
 dev-other: wer=0.8142812279186622
 test-clean: wer=0.7207090687766281
 test-other: wer=0.8201669755268135
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/2gpu.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/2gpu.ckpt
 dev-clean: wer=0.6091320172052498
 dev-other: wer=0.705680301483866
 test-clean: wer=0.6126369446135118
 test-other: wer=0.7105630170223335
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/32gpu.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/32gpu.ckpt
 dev-clean: wer=0.4107385757876549
 dev-other: wer=0.5004318128287666
 test-clean: wer=0.41642574558734025
 test-other: wer=0.5006017996675773
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/4gpu.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/4gpu.ckpt
 dev-clean: wer=0.499669129811404
 dev-other: wer=0.5892871162754181
 test-clean: wer=0.5038610772976263
 test-other: wer=0.594501652560992
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/8gpu.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/8gpu.ckpt
 dev-clean: wer=0.46505643174883277
 dev-other: wer=0.5481863861191804
 test-clean: wer=0.47038572732805845
 test-other: wer=0.5467015646791357
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/scratch.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/scratch.ckpt
 dev-clean: wer=1.2503032976728796
 dev-other: wer=1.2709625500510324
 test-clean: wer=1.2944879793061472
 test-other: wer=1.2946716848480218
 with LM
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/0gpu.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/0gpu.ckpt
 dev-clean: wer=0.9647990882688137
 dev-other: wer=0.9757203423098061
 test-clean: wer=0.9680272367620207
 test-other: wer=0.973387081367136
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/16gpu.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/16gpu.ckpt
 dev-clean: wer=0.26181022756516303
 dev-other: wer=0.34849258067048755
 test-clean: wer=0.26888694461351187
 test-other: wer=0.3435225340542193
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/1gpu.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/1gpu.ckpt
 dev-clean: wer=0.5325355685452741
 dev-other: wer=0.6675237497055821
 test-clean: wer=0.5444309190505173
 test-other: wer=0.6825554515407982
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/2gpu.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/2gpu.ckpt
 dev-clean: wer=0.4045990956214845
 dev-other: wer=0.5240833791316637
 test-clean: wer=0.4095594948265368
 test-other: wer=0.5353151328735456
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/32gpu.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/32gpu.ckpt
 dev-clean: wer=0.2448071762067571
 dev-other: wer=0.3478644892831907
 test-clean: wer=0.24378043213633596
 test-other: wer=0.34466881913531894
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/4gpu.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/4gpu.ckpt
 dev-clean: wer=0.314234770780486
 dev-other: wer=0.4170330533092565
 test-clean: wer=0.32058353621424224
 test-other: wer=0.42322755669334966
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/8gpu.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/8gpu.ckpt
 dev-clean: wer=0.2668835704569685
 dev-other: wer=0.35952343565988854
 test-clean: wer=0.27295724284844797
 test-other: wer=0.359551420438263
-/home/nvaessen/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/scratch.ckpt
+/home/anon/ceph/nanoW2V2/ckpt/ft_asr_ssl_syclic/ls10m/scratch.ckpt
 dev-clean: wer=1.0893165692437778
 dev-other: wer=1.10920938996624
 test-clean: wer=1.1117239805234327
@@ -84,14 +84,14 @@ test-other: wer=1.1195384292073438
 
 ###############################################################################
 Science Cluster
-Job 2734551 for user 'nvaessen'
+Job 2734551 for user 'anon'
 Finished at: Mon Nov 27 16:02:34 CET 2023
 
 Job details:
 ============
 
 Name                : eval_all_ckpt.sh
-User                : nvaessen
+User                : anon
 Partition           : das
 Nodes               : cn104
 Cores               : 2
